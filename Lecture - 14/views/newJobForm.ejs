@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Job here</title>
+  </head>
+  <body>
+    <form action="/job/new" method="post">
+      <div>
+        <label for="title">Title</label><br />
+        <input type="text" name="title" /><br />
+      </div>
+      <br />
+      <div>
+        <label for="companyName">Company Name</label><br />
+        <input type="text" name="companyName" /><br />
+      </div>
+      <br />
+      <div>
+        <label for="package">Package offered</label><br />
+        <input type="number" name="package" /><br />
+      </div>
+      <br />
+      <div>
+        <label for="description">Job Description</label><br />
+        <textarea name="description"></textarea><br />
+      </div>
+      <br />
+      <div>
+        <label for="requirements">Skills required</label><br />
+        <input type="text" name="requirements" /><br />
+        <!-- <form action=""></form> -->
+      </div>
+      <br />
+      <button type="submit">Post New Job</button>
+    </form>
+  </body>
+</html>

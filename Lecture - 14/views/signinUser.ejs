@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignIN</title>
+  </head>
+  <body>
+    <!-- success message -->
+    <% if (success && success.length > 0) { %>
+    <h1><%= success %></h1>
+    <% } %>
+    <!-- error message -->
+    <% if (error && error.length > 0) { %>
+    <h1><%= error%></h1>
+    <% } %>
+    <br />
+    <br />
+    <br />
+
+    <form action="/signin" method="post">
+      <div>
+        <label for="email">E-mail</label><br />
+        <input type="email" name="email" /><br />
+      </div>
+      <br />
+      <div>
+        <label for="password">Password</label><br />
+        <input type="password" name="password" /><br />
+      </div>
+      <br />
+      <button type="submit">SignIn User</button>
+    </form>
+  </body>
+</html>

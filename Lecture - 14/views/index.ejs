@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Platform</title>
+  </head>
+  <body>
+    <header>
+      <!-- success message -->
+      <% if (success && success.length > 0) { %>
+      <h1><%= success %></h1>
+      <% } %>
+      <!-- error message -->
+      <% if (error && error.length > 0) { %>
+      <h1><%= error%></h1>
+      <% } %> <% if (!currentUser) { %>
+      <button><a href="/signup">SignUp User</a></button><br />
+      <button><a href="/signin">SignIn User</a></button><br />
+      <% } else {%>
+      <button><a href="">Logout <%= currentUser.name %></a></button>
+      <% } %>
+    </header>
+    <main>
+      <button><a href="/job/new">+ Post New Job</a></button>
+      <ul>
+        <% allJobs.forEach(job => { %>
+        <li>
+          <h1><%= job.title %></h1>
+          <h2><%= job.companyName %></h2>
+          <h3><%= job.package %></h3>
+        </li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>
