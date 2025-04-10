@@ -6,13 +6,16 @@ const {
   submitNewJobForm,
   showSignUpForm,
 } = require(`../controllers/jobController.js`);
-const { checkUser } = require("../middlewares/mainMiddlewares.js");
+const {
+  checkUser,
+  checkCompany,
+} = require("../middlewares/mainMiddlewares.js");
 
 router.get(`/`, showAllJobs);
 
-router.get(`/new`, checkUser, showNewJobForm);
+router.get(`/new`, checkUser, checkCompany, showNewJobForm);
 
-router.post(`/new`, checkUser, submitNewJobForm);
+router.post(`/new`, checkUser, checkCompany, submitNewJobForm);
 
 router.get(`/signup`, showSignUpForm);
 

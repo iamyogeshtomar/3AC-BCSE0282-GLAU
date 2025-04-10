@@ -7,8 +7,8 @@ const getSignup = (req, res) => {
 };
 
 const postSignup = async (req, res) => {
-  const { username, name, email, dob, phone, password } = req.body;
-  const user = new User({ username, name, email, dob, phone });
+  const { username, name, email, dob, phone, gender, role, password } = req.body;
+  const user = new User({ username, name, email, dob, phone, gender, role });
   const newUser = await User.register(user, password);
   // const hash = await bcryptjs.hash(password, 10);
   // await User.create({

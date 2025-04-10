@@ -22,6 +22,16 @@ const userSchema = new Schema(
       type: Number,
       required: true,
     },
+    gender: {
+      type: String,
+      required: true,
+      enum: [`Male`, `Female`],
+    },
+    role: {
+      type: String,
+      enum: [`Company`, `Applicant`],
+      default: `Applicant`,
+    },
   },
   {
     timestamps: true,

@@ -6,4 +6,12 @@ const checkUser = (req, res, next) => {
   return res.redirect(`/signin`);
 };
 
-module.exports = { checkUser };
+const checkCompany = (req, res, next) => {
+  if (req.user.role === `Applicant`) {
+    req.flash(`error`, `Applicant cannot post jobs`);
+    return res.redirect(`/job`);
+  }
+  return next();
+};
+
+module.exports = { checkUser, checkCompany };
